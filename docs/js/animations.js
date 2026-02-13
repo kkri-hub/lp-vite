@@ -40,21 +40,44 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(card);
   });
 
-  // Smooth scroll enhancement for anchor links
+  // Smooth scroll enhancement with custom easing
+  function smoothScrollTo(target, duration = 1000) {
+    const start = window.pageYOffset;
+    const distance = target.offsetTop - start - 80; // 80px offset for better view
+    const startTime = performance.now();
+
+    function easeInOutCubic(t) {
+      return t < 0.5
+        ? 4 * t * t * t
+        : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }
+
+    function scroll(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, start + distance * easeInOutCubic(progress));
+
+      if (progress < 1) requestAnimationFrame(scroll);
+    }
+
+    requestAnimationFrame(scroll);
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
 
       // Don't prevent default for #top (let native scroll work)
-      if (href === '#top') return;
+      if (href === '#top') {
+        e.preventDefault();
+        smoothScrollTo({ offsetTop: 0 }, 800);
+        return;
+      }
 
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+        smoothScrollTo(target, 1000);
       }
     });
   });
