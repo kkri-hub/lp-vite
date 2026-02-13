@@ -26,6 +26,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 body {
   font-family: 'Noto Sans JP', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', -apple-system, sans-serif;
   line-height: 1.8;
@@ -1584,4 +1595,47 @@ footer {
   .price-amount {
     font-size: 2rem;
   }
+}
+
+/* ========== Fade-in Animation ========== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for cards */
+.scene-card,
+.price-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scene-card.is-visible,
+.price-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add delay for staggered effect */
+.scene-card:nth-child(1).is-visible,
+.price-card:nth-child(1).is-visible {
+  transition-delay: 0.1s;
+}
+
+.scene-card:nth-child(2).is-visible,
+.price-card:nth-child(2).is-visible {
+  transition-delay: 0.2s;
+}
+
+.scene-card:nth-child(3).is-visible,
+.price-card:nth-child(3).is-visible {
+  transition-delay: 0.3s;
 }
