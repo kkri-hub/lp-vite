@@ -1709,7 +1709,7 @@ footer {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 40px rgba(183, 110, 121, 0.15);
   object-fit: cover;
 }
 
