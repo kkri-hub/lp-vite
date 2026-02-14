@@ -690,7 +690,7 @@ footer {
 
 /* 1) Hero — spring gradient with warmth */
 .hub-hero {
-  padding: 12rem var(--space-lg) 8rem;
+  padding: 12rem var(--space-lg) calc(8rem + env(safe-area-inset-bottom, 0px));
   background: linear-gradient(
     135deg,
     var(--bg-accent) 0%,
@@ -995,7 +995,7 @@ footer p {
 
 @media (max-width: 768px) {
   .hub-hero {
-    padding: 7rem 1.5rem 4rem;
+    padding: 7rem 1.5rem calc(4rem + env(safe-area-inset-bottom, 0px));
   }
 
   .hub-hero h1 {
@@ -2051,8 +2051,8 @@ footer {
 /* ========== Back to Top Button ========== */
 .back-to-top {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+  right: 1.5rem;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -2068,6 +2068,7 @@ footer {
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   z-index: 100;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .back-to-top.is-visible {
