@@ -1552,7 +1552,55 @@ footer {
 #scene .scene-card h3 {
   font-size: 1.15rem;
   line-height: 2.2;
-  margin-bottom: 0;
+}
+
+/* Scene products */
+.scene-products {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.scene-products-title {
+  font-family: 'Zen Old Mincho', 'Yu Mincho', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.scene-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.scene-product:last-child {
+  border-bottom: none;
+}
+
+.scene-product:hover {
+  color: var(--soft-gold);
+}
+
+.scene-product-name {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.scene-product-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--soft-gold);
+  white-space: nowrap;
+  margin-left: 1rem;
 }
 
 /* Remove buttons from scene cards */
