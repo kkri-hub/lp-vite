@@ -1873,8 +1873,7 @@ footer {
     180deg,
     rgba(255, 255, 255, 0.95) 0%,
     rgba(251, 250, 248, 0.95) 100%
-  ),
-  url('https://placehold.co/1200x400/FFC0CB/FFFFFF?text=Spring+Background') center center / cover no-repeat;
+  );
   padding: 180px 2rem;
 }
 
