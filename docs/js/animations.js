@@ -99,12 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hero.style.transform = `translateY(${rate}px)`;
           }
 
-          // Logo bar shadow on scroll
-          const logoBar = document.querySelector('.logo-bar');
-          if (logoBar) {
-            logoBar.classList.toggle('is-scrolled', scrolled > 50);
-          }
-
           ticking = false;
         });
         ticking = true;
