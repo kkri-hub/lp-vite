@@ -106,6 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Back to top button visibility
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 400) {
+        backToTop.classList.add('is-visible');
+      } else {
+        backToTop.classList.remove('is-visible');
+      }
+    });
+  }
+
   // Add fade-in to hero on page load
   setTimeout(() => {
     hero?.classList.add('is-visible');
