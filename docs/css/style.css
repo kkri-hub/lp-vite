@@ -1959,6 +1959,17 @@ footer {
               filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ========== Scene Reason ========== */
+.scene-reason {
+  font-family: 'Zen Old Mincho', 'Yu Mincho', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.75;
+}
+
 /* ========== Scroll Indicator ========== */
 .scroll-indicator {
   position: absolute;
