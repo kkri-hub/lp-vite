@@ -1958,3 +1958,166 @@ footer {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
               filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ========== Logo Bar ========== */
+.logo-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 2rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+.logo-bar.is-scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.logo-bar-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo-bar-brand:hover {
+  color: var(--soft-gold);
+}
+
+.logo-bar-tagline {
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+}
+
+/* Adjust hero padding for fixed logo bar */
+.hub-hero {
+  padding-top: 14rem;
+}
+
+@media (max-width: 768px) {
+  .logo-bar {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo-bar-brand {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+  }
+
+  .logo-bar-tagline {
+    font-size: 0.6rem;
+    display: none;
+  }
+
+  .hub-hero {
+    padding-top: 9rem;
+  }
+}
+
+/* ========== Trust Badges ========== */
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2.5rem 2rem;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.3rem;
+}
+
+.trust-badge-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--soft-gold);
+  line-height: 1;
+}
+
+.trust-badge-label {
+  font-family: 'Zen Old Mincho', 'Yu Mincho', serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.1em;
+}
+
+.trust-badge-text {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .trust-badges {
+    flex-wrap: wrap;
+    gap: 1.2rem 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .trust-badge {
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+
+  .trust-badge-number {
+    font-size: 1.5rem;
+  }
+
+  .trust-badge-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* ========== Scroll Indicator ========== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
