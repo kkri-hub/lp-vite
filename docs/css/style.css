@@ -1572,13 +1572,26 @@ footer {
 .engraving-image-wrapper {
   max-width: 800px;
   margin: 0 auto 3rem;
+  position: relative;
+}
+
+.engraving-image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--sakura-pink), var(--soft-gold));
+  opacity: 0.4;
+  z-index: 0;
 }
 
 .engraving-image {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
   object-fit: cover;
 }
 
