@@ -1745,6 +1745,14 @@ footer {
 
 .hub-hero .btn-outline {
   margin-top: 3rem;
+  border: 1.5px solid var(--white);
+  color: var(--white);
+}
+
+.hub-hero .btn-outline:hover {
+  background: linear-gradient(135deg, var(--sakura-pink) 0%, var(--soft-gold) 100%);
+  color: var(--white);
+  border-color: transparent;
 }
 
 /* --- Responsive for new sections --- */
