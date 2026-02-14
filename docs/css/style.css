@@ -995,7 +995,7 @@ footer p {
 
 @media (max-width: 768px) {
   .hub-hero {
-    padding: 7rem 1.5rem 7rem;
+    padding: 7rem 1.5rem 9rem;
   }
 
   .hub-hero h1 {
