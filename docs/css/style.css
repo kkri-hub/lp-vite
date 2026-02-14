@@ -1738,7 +1738,54 @@ footer {
   color: var(--text-light);
   letter-spacing: 0.08em;
   line-height: 2;
-  padding: 0 2rem 2.5rem;
+  padding: 0 2rem 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Price featured product */
+.price-featured {
+  display: block;
+  text-decoration: none;
+  margin: 0 1.5rem 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg);
+  transition: box-shadow 0.3s ease;
+}
+
+.price-featured:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.price-featured img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.price-featured:hover img {
+  transform: scale(1.03);
+}
+
+.price-featured-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+}
+
+.price-featured-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--soft-gold);
+  white-space: nowrap;
+  margin-left: 0.8rem;
 }
 
 /* --- Final CTA Section --- */
