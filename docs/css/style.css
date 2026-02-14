@@ -1528,10 +1528,10 @@ footer {
 .craft-text {
   font-family: 'Zen Old Mincho', 'Yu Mincho', serif;
   font-size: 1.1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 2.8;
   letter-spacing: 0.08em;
-  color: var(--text-light);
+  color: #4a4a4a;
 }
 
 /* --- Scene Section (simplified from Kadode) --- */
@@ -1728,6 +1728,24 @@ footer {
   color: var(--text);
 }
 
+.engraving-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--soft-gold);
+  text-decoration: none;
+  padding: 0.6rem 1.8rem;
+  border: 1px solid var(--soft-gold);
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+}
+
+.engraving-link:hover {
+  background: var(--soft-gold);
+  color: var(--white);
+}
+
 /* --- Price Section (redesigned from Budget) --- */
 #price {
   background: var(--white);
@@ -1878,7 +1896,7 @@ footer {
 .btn-primary {
   display: inline-block;
   padding: var(--space-md) var(--space-2xl);
-  background: linear-gradient(135deg, var(--sakura-pink) 0%, var(--soft-gold) 100%);
+  background: linear-gradient(135deg, #e8a4b8 0%, #c9a96e 100%);
   color: var(--white);
   text-decoration: none;
   font-size: 1rem;
@@ -1887,15 +1905,15 @@ footer {
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-md);
   transform: translateY(0);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   margin-top: var(--space-lg);
   cursor: pointer;
 }
 
 .btn-primary:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-  background: linear-gradient(135deg, var(--sakura-pink) 20%, var(--soft-gold) 100%);
+  background: linear-gradient(135deg, #e8a4b8 20%, #c9a96e 100%);
+  box-shadow: 0 4px 20px rgba(232, 164, 184, 0.35), 0 8px 40px rgba(201, 169, 110, 0.2);
 }
 
 .btn-primary:active {
