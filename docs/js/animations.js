@@ -118,6 +118,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Price card: hover on sub-product to swap featured image (PC only)
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  if (!isTouch) {
+    document.querySelectorAll('.price-card').forEach(card => {
+      const featuredImg = card.querySelector('.price-featured img');
+      const featuredName = card.querySelector('.price-featured-name');
+      const featuredLink = card.querySelector('.price-featured');
+      if (!featuredImg || !featuredName || !featuredLink) return;
+
+      const originalSrc = featuredImg.src;
+      const originalAlt = featuredImg.alt;
+      const originalName = featuredName.innerHTML;
+      const originalHref = featuredLink.href;
+
+      card.querySelectorAll('.scene-product').forEach(product => {
+        const prodImg = product.querySelector('.scene-product-img');
+        const prodName = product.querySelector('.scene-product-name');
+        const prodPrice = product.querySelector('.scene-product-price');
+        if (!prodImg || !prodName || !prodPrice) return;
+
+        product.addEventListener('mouseenter', () => {
+          featuredImg.style.opacity = '0';
+          setTimeout(() => {
+            featuredImg.src = prodImg.src;
+            featuredImg.alt = prodImg.alt;
+            featuredName.innerHTML = prodName.textContent + '<span class="price-featured-price">' + prodPrice.textContent + '</span>';
+            featuredLink.href = product.href;
+            featuredImg.style.opacity = '1';
+          }, 150);
+        });
+      });
+
+      card.addEventListener('mouseleave', () => {
+        featuredImg.style.opacity = '0';
+        setTimeout(() => {
+          featuredImg.src = originalSrc;
+          featuredImg.alt = originalAlt;
+          featuredName.innerHTML = originalName;
+          featuredLink.href = originalHref;
+          featuredImg.style.opacity = '1';
+        }, 150);
+      });
+    });
+  }
+
   // Add fade-in to hero on page load
   setTimeout(() => {
     hero?.classList.add('is-visible');
