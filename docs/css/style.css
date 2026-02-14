@@ -1605,7 +1605,7 @@ footer {
 
 .scene-product-price {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
   font-weight: 500;
   color: var(--soft-gold);
   white-space: nowrap;
@@ -1860,7 +1860,7 @@ footer {
 
 .price-featured-price {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--soft-gold);
   white-space: nowrap;
