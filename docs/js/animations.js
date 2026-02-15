@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Smooth scroll enhancement with custom easing
-  function smoothScrollTo(target, duration = 1000) {
+  function smoothScrollTo(target, duration = 1000, offset = 80) {
     const start = window.pageYOffset;
-    const distance = target.offsetTop - start - 80; // 80px offset for better view
+    const distance = target.offsetTop - start - offset;
     const startTime = performance.now();
 
     function easeInOutCubic(t) {
@@ -77,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        smoothScrollTo(target, 1000);
+        const isHeroCTA = this.closest('.hub-hero') !== null;
+        smoothScrollTo(target, 1000, isHeroCTA ? 20 : 80);
       }
     });
   });
