@@ -163,6 +163,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // SP Price accordion toggle
+  const isSP = window.matchMedia('(max-width: 768px)');
+
+  function setupPriceAccordion() {
+    document.querySelectorAll('.price-card .scene-products').forEach(products => {
+      const title = products.querySelector('.scene-products-title');
+      if (!title) return;
+
+      // Avoid duplicate listeners
+      if (title.dataset.accordionBound) return;
+      title.dataset.accordionBound = 'true';
+
+      title.addEventListener('click', () => {
+        if (!isSP.matches) return;
+        products.classList.toggle('is-open');
+      });
+    });
+  }
+
+  setupPriceAccordion();
+
   // Add fade-in to hero on page load
   setTimeout(() => {
     hero?.classList.add('is-visible');
