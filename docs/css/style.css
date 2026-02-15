@@ -1613,6 +1613,25 @@ footer {
   margin-left: 1rem;
 }
 
+/* Price card sub-products */
+.price-card .scene-products {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.price-card .scene-product {
+  flex-wrap: wrap;
+}
+
+.price-card .scene-product-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.price-card .scene-product-price {
+  margin-left: 0;
+  font-size: 1.05rem;
+}
+
 /* Remove buttons from scene cards */
 #scene .btn-outline {
   display: none;
@@ -1816,10 +1835,11 @@ footer {
   font-size: 0.92rem;
   font-weight: 400;
   color: var(--text-light);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 2;
-  padding: 0 2rem 0;
+  padding: 0 1.5rem;
   margin-bottom: 1.5rem;
+  white-space: nowrap;
 }
 
 /* Price featured product */
