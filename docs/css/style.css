@@ -2192,13 +2192,45 @@ footer {
   }
 
   .price-card .scene-products.is-open .scene-product {
-    max-height: 80px;
-    padding: 0.7rem 0;
+    max-height: 100px;
+    padding: 0.8rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     opacity: 1;
   }
 
   .price-card .scene-products.is-open .scene-product:last-child {
     border-bottom: none;
+  }
+
+  /* --- Fix 4: Larger tap targets for sub-products --- */
+  .price-card .scene-product-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+  }
+
+  .price-card .scene-product {
+    gap: 1rem;
+  }
+
+  .price-card .scene-product-name {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .price-card .scene-product-price {
+    font-size: 1.05rem;
+    margin-left: 0.6rem;
+  }
+
+  /* --- Fix 6: Featured product name stacking --- */
+  .price-featured-name {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .price-featured-price {
+    margin-left: 0;
   }
 }
